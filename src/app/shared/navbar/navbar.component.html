@@ -1,0 +1,77 @@
+<header>
+    <div class="caja" *ngIf="!viewUser">
+        <img id="img-logo" src="assets/img/logos-helados.jpg" alt="logo-helados">
+        <nav>
+            <ul>
+                <li >
+                    <a routerLink="/" routerLinkActive="active-link">Home</a>
+                </li>
+                <li >
+                    <a routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="caja" *ngIf="viewUser">
+        <img id="img-logo" src="assets/img/logos-helados.jpg" alt="logo-helados">
+        <nav>
+            <ul>
+                <li >
+                    <a routerLink="/" routerLinkActive="active-link">Home</a>
+                </li>
+                <li >
+                    <a routerLink="/productos" routerLinkActive="active-link">Nuestros Productos </a>
+                </li>
+                <li >
+                    <a routerLink="/perfil" routerLinkActive="active-link">Perfil</a>
+                </li>
+                <li >
+                    <a (click)="singOut()" style="cursor: pointer;">Cerrar Sesion </a>
+                </li>
+                <li >
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                        <img src="assets/img/carrito-de-compras.png" alt="">
+                        Carrito
+                    </button>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wave"></div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="carro">
+            <div class="offcanvas-body">
+                <div class="carrito">
+                    <img src="" alt="producto">
+                    <div class="producto">
+                        <p>xxxxxxxxxxxxxxxxxx</p>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <p class="precio">Precios: $ xxxxxxxxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas-footer">
+                <p>Subtotal:</p>
+                <p>$2350</p>
+                <p>Total:</p>
+                <p>$2350</p>
+            </div>
+        </div>
+
+        <button class="btn-offcanva">Ordenar</button>
+    </div>
+</header>
