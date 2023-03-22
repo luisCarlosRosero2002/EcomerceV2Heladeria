@@ -1,35 +1,24 @@
 <header>
-    <div class="caja" *ngIf="!viewUser">
+    <div class="caja">
         <img id="img-logo" src="assets/img/logos-helados.jpg" alt="logo-helados">
         <nav>
             <ul>
                 <li >
                     <a routerLink="/" routerLinkActive="active-link">Home</a>
                 </li>
-                <li >
+                <li  *ngIf="viewUser">
+                    <a routerLink="/productos" routerLinkActive="active-link">Nuestros Productos </a>
+                </li>
+                <li  *ngIf="viewUser">
+                    <a routerLink="/perfil" routerLinkActive="active-link">Perfil</a>
+                </li>
+                <li  *ngIf="viewUser">
+                    <a (click)="singOut()" style="cursor: pointer;">Cerrar Sesion </a>
+                </li>
+                <li  *ngIf="!viewUser">
                     <a routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a>
                 </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="caja" *ngIf="viewUser">
-        <img id="img-logo" src="assets/img/logos-helados.jpg" alt="logo-helados">
-        <nav>
-            <ul>
-                <li >
-                    <a routerLink="/" routerLinkActive="active-link"><img src="assets/img/casa.png">Home</a>
-                </li>
-                <li >
-                    <a routerLink="/productos" routerLinkActive="active-link"><img src="assets/img/cesta-de-mano.png">Nuestros Productos </a>
-                </li>
-                <li >
-                    <a routerLink="/perfil" routerLinkActive="active-link"><img src="assets/img/usuario-de-perfil.png">Perfil</a>
-                </li>
-                <li >
-                    <a (click)="singOut()" style="cursor: pointer;"><img src="assets/img/cerrar-sesion.png">Cerrar Sesion </a>
-                </li>
-                <li >
+                <li  *ngIf="viewUser">
                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight">
                         <img src="assets/img/carrito-de-compras.png" alt="">
