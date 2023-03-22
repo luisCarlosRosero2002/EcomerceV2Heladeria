@@ -1,10 +1,12 @@
 import { HttpInterceptor } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor{
+
+  public viewNavbar = new EventEmitter<boolean>();
 
   intercept( req , next ){
 

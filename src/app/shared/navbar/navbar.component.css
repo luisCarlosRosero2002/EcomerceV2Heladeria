@@ -95,12 +95,9 @@ nav a:hover {
     left: 0;
     position: absolute;
     top: 185px;
-    background-image: url(../../assets/wave.png);
+    background-image: url(../../../assets/img/wave.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
-.active-link{
-    background-color: #419282;
 }
 
 /*----------Off canva--------------*/

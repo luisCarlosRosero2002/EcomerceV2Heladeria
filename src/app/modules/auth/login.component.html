@@ -1,4 +1,3 @@
-<app-navbar [viewUser]="viewUser"></app-navbar>
 <div class="container">
     <section class="section-login">
 
@@ -8,13 +7,13 @@
                 <img src="assets/img/cono-login.png" alt="logo-login">
                 <h2>¿Ya tiene cuenta?</h2>
                 <p>inicia sesion para ingresar</p>
-                <button id="btn-iniciarS" (click)="lisentFormLogin(1)">Iniciar Sesion</button>
+                <button id="btn-iniciarS" (click)="lisentFormLogin()">Iniciar Sesion</button>
             </div>
             <div class="caja_t_registro" [ngClass]="{'Lcaja_t_registro': flagLogin, 'Rcaja_t_registro': !flagLogin}">
                 <img src="assets/img/form.png" alt="logo-login">
                 <h2>¿Aun no tienes una cuenta?</h2>
                 <p>Registrate para iniciar sesion</p>
-                <button id="btn-registrarse" (click)="lisentFormLogin(2)">Registrate</button>
+                <button id="btn-registrarse" (click)="lisentFormLogin()">Registrate</button>
             </div>
 
         </div>
@@ -33,26 +32,29 @@
             </form>
 
             <!--Formulario del registro-->
-            <form class="formulario_registro" (ngSubmit)="onRegister()"
+            <form class="formulario_registro"
                 [ngClass]="{'Lformulario_registro': flagLogin, 'Rformulario_registro': !flagLogin}">
                 <h3>Registrate</h3>
                 <div>
 
-                    <input type="text" name="nombres" class="input-padron" placeholder="Juan" required>
+                    <input [(ngModel)]="userRegister.nombres" type="text" name="nombres" class="input-padron" placeholder="Juan" required>
 
-                    <input type="text" name="apellidos" class="input-padron" placeholder="Perez" required>
+                    <input [(ngModel)]="userRegister.apellidos" type="text" name="apellidos" class="input-padron" placeholder="Perez" required>
 
-                    <input type="date" name="fechaNac" id="fecha-nac" class="input-padron" placeholder="" required>
+                    <input [(ngModel)]="userRegister.fechaNac" type="date" name="fechaNac" id="fecha-nac" class="input-padron" placeholder="" required>
 
-                    <input type="tel" name="telefono" id="telefono" class="input-padron" placeholder="XXX-XXX-XXXX"
+                    <input [(ngModel)]="userRegister.telefono" type="tel" name="telefono" id="telefono" class="input-padron" placeholder="XXX-XXX-XXXX"
                         required>
 
-                    <input type="email" name="correo" id="emial" class="input-padron" placeholder="juanperez@gmail.com"
+                    <input [(ngModel)]="userRegister.correo" type="email" name="correo" id="emial" class="input-padron" placeholder="juanperez@gmail.com"
                         required>
 
-                    <input type="text" name="usuario" class="input-padron" placeholder="Usuario" required>
+                    <input [(ngModel)]="userRegister.direccion" type="text" name="direccion"  class="input-padron" placeholder="direccion"
+                    required>
 
-                    <input type="password" name="password" class="input-padron" placeholder="Contraseña" required>
+                    <input [(ngModel)]="userRegister.name" type="text" name="name" class="input-padron" placeholder="Usuario" required>
+
+                    <input [(ngModel)]="userRegister.password" type="password" name="password" class="input-padron" placeholder="Contraseña" required>
 
                     <input type="submit" class="btn_form" value="Registrarse" placeholder=""  (click)="onRegister()">
                 </div>
