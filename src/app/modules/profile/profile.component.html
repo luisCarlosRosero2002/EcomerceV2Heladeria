@@ -1,10 +1,9 @@
 <app-navbar [viewUser]="true"></app-navbar>
 <main class="mian-perfil">
-    <form class="" action="/twist/logup" method="POST">
-        <h2>Actualiza tus datos</h2>
+    <form class="form-update" action="/twist/logup" method="POST">
+        <h1>Actualiza tus datos</h1>
+        <!--<h2 class="perfil">¿Deseas actualizar tus datos?</h2>-->
         <div>
-
-            <h1 class="perfil">¿Deseas actualizar tus datos?</h1>
             <input type="text" class="input_form" name="nombres" placeholder="Juan">
 
             <input type="text" class="input_form" name="apellidos" placeholder="Perez">
@@ -14,6 +13,8 @@
             <input type="tel" class="input_form" name="telefono" id="telefono" placeholder="XXX-XXX-XXXX">
 
             <input type="email" class="input_form" name="correo" id="emial" placeholder="juanperez@gmail.com">
+
+            <input type="text" class="input_form" name="direccion" placeholder="Direccion">
 
             <input type="text" class="input_form" name="usuario" placeholder="Usuario">
 
