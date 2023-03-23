@@ -40,8 +40,13 @@ export class ModalsComponent implements OnInit {
   }
 
   public precioTotal(){
-    let data = JSON.parse(JSON.stringify(this.dataCar));
-    return data.reduce( (x,y) => x + y['precioxUni'] ,0);
+    
+    
+    if(typeof this.dataCar === undefined) {
+      
+      let data = JSON.parse(JSON.stringify(this.dataCar));
+      return data.reduce( (x,y) =>{ x + y['precioxUni'] ,0});
+    }
 
   }
 
