@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ModalsComponent } from './modals/modals.component';
 import { SidebarModule } from 'primeng/sidebar';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +18,9 @@ import { SidebarModule } from 'primeng/sidebar';
   imports: [
     CommonModule,
     RouterModule,
-    SidebarModule
+    SidebarModule,
+    DropdownModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,FooterComponent, ModalsComponent

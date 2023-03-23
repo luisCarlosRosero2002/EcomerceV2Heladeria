@@ -28,4 +28,9 @@ export class TokenInterceptorService implements HttpInterceptor{
     const url = `${environment.ApiEndPoint}/carrito`;
     return this.http.get(url);
   }
+
+  public updateProducts(product){
+    const url = `${environment.ApiEndPoint}/carUpdate`;
+    return this.http.post(url,product);
+  }
 }

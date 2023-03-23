@@ -9,7 +9,20 @@ import { TokenInterceptorService } from '../services/token-interceptor.service';
 export class ModalsComponent implements OnInit {
 
   @Input() dataCar:any
+  public selectedValue:any;
 
+  public numbers = [
+    { name: 1},
+    { name: 2},
+    { name: 3 },
+    { name: 4 },
+    { name: 5 },
+    { name: 6 },
+    { name: 7 },
+    { name: 8 },
+    { name: 9 },
+    { name: 10 },
+  ];
   constructor( private tokenInterceptorService: TokenInterceptorService)
   {}
 
@@ -17,21 +30,19 @@ export class ModalsComponent implements OnInit {
     // this.getProducts();
     
   }
+
+  
   
   public closeModal(){
     
-    // console.log(this.dataCar);
+    console.log(this.dataCar);
     this.tokenInterceptorService.$modal.emit(false);
   }
 
-  // public getProducts(){
-  //   this.tokenInterceptorService.getAllProductsCar().subscribe(
-  //     res => {
-  //       this.dataCar = res;
-  //       console.log(this.dataCar);
-        
-  //     }
-  //   )
-  // }
+  public precioTotal(){
+    let data = JSON.parse(JSON.stringify(this.dataCar));
+    return data.reduce( (x,y) => x + y['precioxUni'] ,0);
+
+  }
 
 }

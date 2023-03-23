@@ -3,29 +3,22 @@
     <h5 class="offcanvas-title">Carrito</h5>
     <button type="button" class="btn-close" (click)="closeModal()"></button>
   </div>
-  <div class="carro">
+  <div class="carro" *ngFor="let item of dataCar" >
     <div class="offcanvas-body">
       <div class="carrito">
-        <img src="assets/img-products/artesanal_pina.jpg" alt="producto">
+        <img src={{item.imgUrl}} alt="producto">
         <div class="producto">
-          <p>xxxxxxxxxx</p>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <p class="precio">Precios: $ xxxxxxxxx</p>
+          <p>{{item.NombreProducto}}</p>
+          <p-dropdown [options]="numbers" [(ngModel)]="selectedValue" optionLabel="name"></p-dropdown>
+          <p class="precio">Precios: $ {{item.precioxUni}}</p>
         </div>
       </div>
     </div>
-    <div class="offcanvas-footer">
-      <p>Subtotal:</p>
-      <p>$2350</p>
-      <p>Total:</p>
-      <p>$2350</p>
-    </div>
+    
+  </div>
+  <div class="offcanvas-footer">
+    <p>Total:</p>
+    <p>${{precioTotal()}}</p>
   </div>
 
   <button class="btn-offcanva">Ordenar</button>
