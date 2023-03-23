@@ -1,12 +1,15 @@
-import { HttpInterceptor } from '@angular/common/http';
+import { HttpClient, HttpInterceptor } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { environment } from 'src/env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor{
 
-  public viewNavbar = new EventEmitter<boolean>();
+  public viewNavbar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  public $modal: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 
   intercept( req , next ){
 
@@ -19,5 +22,10 @@ export class TokenInterceptorService implements HttpInterceptor{
     return next.handle(tokenHeader);
     
   }
-  constructor() { }
+  constructor( private http:HttpClient ) { }
+
+  public getAllProductsCar(){
+    const url = `${environment.ApiEndPoint}/carrito`;
+    return this.http.get(url);
+  }
 }

@@ -4,23 +4,22 @@
         <nav>
             <ul>
                 <li >
-                    <a routerLink="/" routerLinkActive="active-link">Home</a>
+                    <a routerLink="/" routerLinkActive="active-link"><img src="assets/img/casa.png">Home</a>
                 </li>
-                <li  *ngIf="viewUser">
-                    <a routerLink="/productos" routerLinkActive="active-link">Nuestros Productos </a>
+                <li *ngIf="viewUser">
+                    <a routerLink="/productos" routerLinkActive="active-link"><img src="assets/img/cesta-de-mano.png">Nuestros Productos </a>
                 </li>
-                <li  *ngIf="viewUser">
-                    <a routerLink="/perfil" routerLinkActive="active-link">Perfil</a>
+                <li *ngIf="viewUser">
+                    <a routerLink="/perfil" routerLinkActive="active-link"><img src="assets/img/usuario-de-perfil.png">Perfil</a>
                 </li>
-                <li  *ngIf="viewUser">
-                    <a (click)="singOut()" style="cursor: pointer;">Cerrar Sesion </a>
+                <li *ngIf="viewUser">
+                    <a (click)="singOut()" style="cursor: pointer;"><img src="assets/img/cerrar-sesion.png">Cerrar Sesion </a>
                 </li>
                 <li  *ngIf="!viewUser">
                     <a routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a>
                 </li>
                 <li  *ngIf="viewUser">
-                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                        aria-controls="offcanvasRight">
+                    <button class="btn" type="button" (click)="openModal()">
                         <img src="assets/img/carrito-de-compras.png" alt="">
                         Carrito
                     </button>
@@ -29,38 +28,10 @@
             </ul>
         </nav>
     </div>
-
     <div class="wave"></div>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="carro">
-            <div class="offcanvas-body">
-                <div class="carrito">
-                    <img src="" alt="producto">
-                    <div class="producto">
-                        <p>xxxxxxxxxxxxxxxxxx</p>
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <p class="precio">Precios: $ xxxxxxxxxxxxxxx</p>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer">
-                <p>Subtotal:</p>
-                <p>$2350</p>
-                <p>Total:</p>
-                <p>$2350</p>
-            </div>
-        </div>
-
-        <button class="btn-offcanva">Ordenar</button>
-    </div>
+   
 </header>
+
+<p-sidebar [(visible)]="viewModal" position="right">
+    <app-modals [dataCar]="dataCar"></app-modals>
+</p-sidebar>

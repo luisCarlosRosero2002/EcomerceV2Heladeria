@@ -6,6 +6,8 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt'
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
@@ -20,7 +22,8 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,

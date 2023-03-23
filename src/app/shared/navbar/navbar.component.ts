@@ -12,6 +12,8 @@ import { TokenInterceptorService } from '../services/token-interceptor.service';
 export class NavbarComponent implements OnInit{
 
   public viewUser:boolean = false;
+  public viewModal:boolean = false;
+  public dataCar:any;
   
   public constructor(
     private authService:AuthService,
@@ -20,11 +22,31 @@ export class NavbarComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    
+
+    this.validUser();
     this.tokenInterceptorSercice.viewNavbar.subscribe(
       res => {
         console.log(res);
-        this.viewUser = res
+        this.viewUser = res;
+      }
+    )
+    this.tokenInterceptorSercice.$modal.subscribe(
+      res =>{
+        this.viewModal = res;
+      }
+    )
+  }
+
+  public validUser(){
+    const token = localStorage.getItem('token');
+    if(token) this.viewUser = true;
+  }
+
+  public openModal(){    
+    this.viewModal = true;
+    this.tokenInterceptorSercice.getAllProductsCar().subscribe(
+      res => {
+        this.dataCar = res;
       }
     )
   }

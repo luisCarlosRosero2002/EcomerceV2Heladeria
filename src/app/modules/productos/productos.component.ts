@@ -32,6 +32,16 @@ export class ProductosComponent implements OnInit {
   }
 
   public addProducts(addItem){
+    const data = {
+      id_producto:addItem,
+      cantidad:1
+    }
+    this.productsService.addProducts(data).subscribe(
+      res => {
+        
+      }
+    )
+    console.log(addItem);
     
       
   }  

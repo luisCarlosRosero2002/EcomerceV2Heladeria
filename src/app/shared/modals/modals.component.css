@@ -1,0 +1,53 @@
+.offcanvas-header {
+  background: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+  color: white;
+}
+
+.carrito {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.offcanvas-title {
+  margin-top: 60px;
+  margin-left: 45px;
+  font-size: 25px;
+}
+
+
+.carrito img {
+  width: 100%;
+}
+
+.producto p {
+  text-align: justify;
+}
+
+.producto select {
+  padding: 15px;
+}
+
+.producto .precio {
+  font-size: 17px;
+  color: goldenrod;
+}
+
+.offcanvas-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.btn-offcanva {
+  text-align: center;
+  margin: 25px 40px;
+  padding: 12px 0px;
+  background: black;
+  color: white;
+  font-size: 15px;
+}
+
+.btn-offcanva:hover {
+  background: #add672;
+  color: white;
+}

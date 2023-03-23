@@ -3,20 +3,23 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { ModalsComponent } from './modals/modals.component';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 
 
 @NgModule({
   declarations: [
-   NavbarComponent,FooterComponent
+   NavbarComponent,FooterComponent, ModalsComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SidebarModule
   ],
   exports: [
-    NavbarComponent,FooterComponent
+    NavbarComponent,FooterComponent, ModalsComponent
   ]
 })
 export class SharedModule { }

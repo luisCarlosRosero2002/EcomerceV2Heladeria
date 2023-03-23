@@ -15,4 +15,9 @@ export class ProductosService {
     const url = `${environment.ApiEndPoint}/productos`;
     return this.http.get(url);
   }
+
+  public addProducts(product){
+    const url = `${environment.ApiEndPoint}/carrito`;
+    return this.http.post(url,product);
+  }
 }
