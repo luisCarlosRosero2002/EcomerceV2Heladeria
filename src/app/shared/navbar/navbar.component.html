@@ -16,7 +16,7 @@
                     <a (click)="singOut()" style="cursor: pointer;"><img src="assets/img/cerrar-sesion.png">Cerrar Sesion </a>
                 </li>
                 <li  *ngIf="!viewUser">
-                    <a routerLink="/login" routerLinkActive="active-link">Iniciar Sesion</a>
+                    <a routerLink="/login" routerLinkActive="active-link"><img src="assets/img/perfil-del-usuario.png">Iniciar Sesion</a>
                 </li>
                 <li  *ngIf="viewUser">
                     <button class="btn" type="button" (click)="openModal()">
@@ -29,7 +29,7 @@
         </nav>
     </div>
     <div class="wave"></div>
-   
+
 </header>
 
 <p-sidebar [(visible)]="viewModal" position="right">

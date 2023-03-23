@@ -30,12 +30,12 @@
   font-size: 22px;
   font: bold;
   background: #CEF09D;
-  right: 685px;
   padding: 4px 26px;
   position:absolute;
-  bottom: -70px;
   border-radius: 10px;
   z-index: 10;
+  right: 45%;
+  bottom: -12%;
 }
 
 .mian-perfil .btn_form:hover {
