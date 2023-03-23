@@ -1,4 +1,5 @@
 /*------------------Seccion Alta (Header)----------------------------------*/
+
 header {
   width: 100%;
   height: 300px;
@@ -97,7 +98,7 @@ nav a:hover {
 }
 
 /*----------Off canva--------------*/
-
+/*
 .offcanvas-header {
   background: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
   color: white;
@@ -150,4 +151,4 @@ nav a:hover {
 .btn-offcanva:hover {
   background: #add672;
   color: white;
-}
+} */

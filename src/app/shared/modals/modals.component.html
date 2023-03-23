@@ -1,8 +1,17 @@
+<ng-template pTemplate="header">Header Content</ng-template>
+
+
+
+
 <div class="caja_principal">
-  <div class="offcanvas-header">
+  <!-- <div class="offcanvas-header">
     <h5 class="offcanvas-title">Carrito</h5>
     <button type="button" class="btn-close" (click)="closeModal()"></button>
-  </div>
+  </div> -->
+
+  <ng-template pTemplate="content">Body Content</ng-template>
+
+
   <div class="carro" *ngFor="let item of dataCar" >
     <div class="offcanvas-body">
       <div class="carrito">
@@ -22,7 +31,7 @@
         <p class="precio">Precios: $ {{item.precioxUni}}</p>
       </div>
     </div>
-    
+
   </div>
   <div class="offcanvas-footer">
     <p>Total:</p>
@@ -31,3 +40,4 @@
 
   <button class="btn-offcanva">Ordenar</button>
 </div>
+
