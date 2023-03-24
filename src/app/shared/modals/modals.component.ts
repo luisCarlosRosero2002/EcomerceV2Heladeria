@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { TokenInterceptorService } from '../services/token-interceptor.service';
+import Swal from 'sweetalert2';
+import { Sidebar } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-modals',
@@ -28,26 +30,37 @@ export class ModalsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getProducts();
-    
+
   }
 
-  
-  
+
+
   public closeModal(){
-    
+
     console.log(this.dataCar);
     this.tokenInterceptorService.$modal.emit(false);
   }
 
   public precioTotal(){
-    
-    
-    if(typeof this.dataCar === undefined) {
-      
+
+    if(typeof this.dataCar != undefined) {
+
       let data = JSON.parse(JSON.stringify(this.dataCar));
       return data.reduce( (x,y) =>{ x + y['precioxUni'] ,0});
     }
 
+  }
+
+  public swAlert(){
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Tu pedido se ha realizado con exito',
+      text:'En los proximos 30 a 60 minutos recibiras tu Pedido',
+      footer:'Gracias por tu compra',
+      showConfirmButton: false,
+      timer: 3500
+    })
   }
 
 }
