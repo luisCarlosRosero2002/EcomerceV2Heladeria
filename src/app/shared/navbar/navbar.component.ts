@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit{
   public viewUser:boolean = false;
   public viewModal:boolean = false;
   public dataCar:any;
+  public valorTot:number = 0;
 
   public constructor(
     private authService:AuthService,
@@ -44,10 +45,19 @@ export class NavbarComponent implements OnInit{
   }
 
   public openModal(){
+    console.log("Consulta produc");
+    
     this.viewModal = true;
     this.tokenInterceptorSercice.getAllProductsCar().subscribe(
       res => {
+        console.log(res);
+        
         this.dataCar = res;
+        // this.valorTot = this.dataCar.reduce( (x,y) =>{ x + y['precioxUni'] ,0})
+       
+        
+        // console.log(this.valorTot);
+        
       }
     )
   }
@@ -74,4 +84,22 @@ export class NavbarComponent implements OnInit{
       footer:'Sesion cerrada con exito'
     })
   }
+
+
+  // public precioTotal(){
+
+    
+  //   if((typeof this.dataCar).toString() != 'undefined') {
+      
+      
+      
+  //     let data = JSON.parse(JSON.stringify(this.dataCar));
+  //     // return 
+  //     console.log(data['precioxUni']);
+  //     console.log(data.reduce( (x,y) =>{ x + y['precioxUni'] ,0}))
+  
+   
+  //   }
+
+  // }
 }

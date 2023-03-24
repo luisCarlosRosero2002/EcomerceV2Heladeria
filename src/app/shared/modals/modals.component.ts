@@ -9,7 +9,8 @@ import { TokenInterceptorService } from '../services/token-interceptor.service';
 export class ModalsComponent implements OnInit {
 
   @Input() dataCar:any
-  public selectedValue:any;
+  
+
 
   public numbers = [
     { name: 1},
@@ -28,25 +29,29 @@ export class ModalsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getProducts();
-    
+    // this.precioTotal();
   }
 
   
   
-  public closeModal(){
+  // public closeModal(){
     
-    console.log(this.dataCar);
-    this.tokenInterceptorService.$modal.emit(false);
-  }
+  //   console.log("datacar",this.dataCar);
+  //   this.tokenInterceptorService.$modal.emit(false);
+  // }
 
   public precioTotal(){
-    
-    
-    if(typeof this.dataCar === undefined) {
-      
-      let data = JSON.parse(JSON.stringify(this.dataCar));
-      return data.reduce( (x,y) =>{ x + y['precioxUni'] ,0});
+
+    let valorTot:number = 0;
+    if((typeof this.dataCar).toString() != 'undefined') {
+      debugger
+      // let 
+      this.dataCar.map( x => {
+        valorTot = valorTot +x['subTotal']
+      });
+      return valorTot;
     }
+    return 0;
 
   }
 
